@@ -17,3 +17,19 @@ It's a SW that is used to flash MCU (update MCU code) wirelessly over internet.
 1. 2 Separate Banks (rooms) so if download fails in the middle you can go back to the old code
 2. Smooth transitions betwen banks
 
+## Future Improvements
+1. Authentication (using username and password provided by author) --> already implemented
+2. Data Encryption and decryption (security management)
+3. Data integrity check --> already implemented
+
+>> Burn .hex file in "FOTA-firmware/Debug" on your MCU
+>> Copy the file "FOTA-firmware/ldscripts/mem.ld" **before build** to every project you want to flash over the air 
+
+## Steps to use
+1. Run app.py using this command  ``` python app.py ```
+the following is displayed
+![image](https://user-images.githubusercontent.com/61471002/143068207-79dc2266-4c61-43f1-b7a0-882c31dd4fd8.png)
+2. Copy the link to user browser
+3. Click on "Choose File" button and choose hex file
+4. click "Submit"
+5. Reset MCU
