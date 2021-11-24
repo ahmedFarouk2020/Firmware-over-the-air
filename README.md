@@ -22,9 +22,10 @@ It's a SW that is used to flash MCU (update MCU code) wirelessly over internet.
 2. Data Encryption and decryption (security management)
 3. Data integrity check --> already implemented
 
->> Burn .hex file in "FOTA-firmware/Debug" on your MCU
+>> First of all, Burn *.hex file* in **FOTA-firmware/Debug** on your MCU
+<!--
 >> Copy the file "FOTA-firmware/ldscripts/mem.ld" **before build** to every project you want to flash over the air 
-
+-->
 ## Steps to use
 1. Run app.py using this command  ``` python app.py ```
 the following is displayed
