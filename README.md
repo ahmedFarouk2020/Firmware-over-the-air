@@ -34,3 +34,42 @@ the following is displayed
 3. Click on "Choose File" button and choose hex file
 4. click "Submit"
 5. Reset MCU
+
+>> Note: The Hex file used with this FOTA has a special format :)
+
+## How to create the Hex file
+1. Create empty .hex file 
+2. Modify the **ldscripts/mem.ld** file in the project you want to upload to MCU as follows
+```
+MEMORY
+{
+  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 20K
+  CCMRAM (xrw) : ORIGIN = 0x00000000, LENGTH = 0
+  FLASH (rx) : ORIGIN = 0x08002800, LENGTH = 27k
+  FLASHB1 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB0 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB1 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB2 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB3 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  MEMORY_ARRAY (xrw)  : ORIGIN = 0x00000000, LENGTH = 0
+}
+```
+3. Compile
+4. Copy all the content of the generated hex file from step 3 and paste it in the empty file
+5. Add '*' in a new line just after the present data
+6. repeat the steps from 2 to 4 but with this new values 
+```
+MEMORY
+{
+  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 20K
+  CCMRAM (xrw) : ORIGIN = 0x00000000, LENGTH = 0
+  FLASH (rx) : ORIGIN = 0x08009400, LENGTH = 27k
+  FLASHB1 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB0 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB1 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB2 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB3 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  MEMORY_ARRAY (xrw)  : ORIGIN = 0x00000000, LENGTH = 0
+}
+```
+7. Your file is ready to be uploaded **I will add a sample file too**
