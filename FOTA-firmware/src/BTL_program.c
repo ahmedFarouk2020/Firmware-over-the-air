@@ -40,7 +40,7 @@ void ABTL_vidInit(void)
 
 	/*ESP Init*/
 	HESP_vidInit();
-	HESP_vidConnectAP((u8*)"your_wifi_name",(u8*)"Your_password");
+	HESP_vidConnectAP((u8*)"abc",(u8*)"#*600800*#");
 
 }
 
@@ -98,8 +98,8 @@ void ABTL_vidStart(void)
 			switch (u8SuccessfullyUpdatedBank)
 			{
 				// BankB = 1	BankA = 0
-			case 0xAA:Loc_pu8ServerAnswer = vidGetPageOfRecordsUseingESP(1,Loc_u8PageNumCounter, 80); break; //100 is the number of records at a page //1 for bankb
-			case 0xBB:Loc_pu8ServerAnswer = vidGetPageOfRecordsUseingESP(0,Loc_u8PageNumCounter, 80); break;//100 is the number of records at a page
+			case 0xAA:Loc_pu8ServerAnswer = vidGetPageOfRecordsUseingESP(1,Loc_u8PageNumCounter, 50); break; //100 is the number of records at a page //1 for bankb
+			case 0xBB:Loc_pu8ServerAnswer = vidGetPageOfRecordsUseingESP(0,Loc_u8PageNumCounter, 50); break;//100 is the number of records at a page
 			}
 			vidParseRecord(Loc_pu8ServerAnswer);
 			Loc_u8PageNumCounter++;

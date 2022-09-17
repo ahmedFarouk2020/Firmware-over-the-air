@@ -15,7 +15,7 @@
  *  	2-The Larger Num. of Records you take at once, The Less time your Updateing will take
  *
  * */
-#define NUMBER_OF_RECORDS_PER_TIME  100
+#define NUMBER_OF_RECORDS_PER_TIME  50
 
 
 #endif

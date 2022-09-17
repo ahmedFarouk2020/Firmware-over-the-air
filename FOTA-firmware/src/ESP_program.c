@@ -87,7 +87,7 @@ void HESP_vidServerConnect(u8 Cpy_u8ServerIP[])
 		MUSART1_vidSendTextSynch(Loc_u8Comma);
 		MUSART1_vidSendTextSynch(Loc_u8Port);
 		MUSART1_vidSendTextSynch(Loc_u8EndCmd);	*/
-		MUSART1_vidSendTextSynch("AT+CIPSTART=\"TCP\",\"192.168.1.4\",8090\r\n");
+		MUSART1_vidSendTextSynch("AT+CIPSTART=\"TCP\",\"192.168.1.4\",80\r\n");
 		
 		Loc_u8ValidateStatus = u8ValidateCmd(SERVER_TIMEOUT);
 	}

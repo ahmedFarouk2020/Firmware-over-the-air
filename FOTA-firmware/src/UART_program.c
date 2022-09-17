@@ -47,7 +47,7 @@
 		MUSART1 -> BRR |= (  0xf&Loc_u16DIVFraction);
 		MUSART1 -> BRR |= ( (0xff&Loc_u16DIVMatissa) << 4);
 		*/
-		MUSART1 -> BRR = 0x341;// 0x45;
+		MUSART1 -> BRR = 0x45;//0x341;
 
 
 
